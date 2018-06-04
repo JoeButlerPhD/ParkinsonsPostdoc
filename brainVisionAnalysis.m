@@ -29,4 +29,19 @@ meta700 = fullData(a_700,:);
 [a_2100 b_2100] = find(fullData(:,6) == 2100);
 meta2100 = fullData(a_2100,:);
 
+% find bad trials
+match = reshape(strcmp({fp2100.Markers.Type}, 'Bad Interval'), size(fp2100.Markers))
+% bad_interval_marker = vertcat(fp2100.Markers(match).Type)
+[fp2100bad_trials bb] = find(match == 1)
+bb = []
+
+match = reshape(strcmp({fp700.Markers.Type}, 'Bad Interval'), size(fp700.Markers))
+% bad_interval_marker = vertcat(fp2100.Markers(match).Type)
+[fp700bad_trials bb] = find(match == 1)
+bb = []
+
+
+
+
+
  
